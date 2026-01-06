@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>محتوى الكورس</title>
+</head>
+<body>
+
+<h3>📺 فيديوهات الكورس</h3>
+<ul id="videos"></ul>
+
+<script>
+const urlParams = new URLSearchParams(window.location.search);
+const courseId = urlParams.get('course');
+const userId = 5; // مؤقتًا
+
+async function loadVideos() {
+  const res = await fetch(`/api/student/course/${courseId}/videos/${userId}`);
+  const videos = await res.json();
+
+  const list = document.getElementById('videos');
+  list.innerHTML = '';
+
+  videos.forEach(v => {
+    list.innerHTML += `
+      <li>
+        <a href="course-video.html?video=${v.id}">
+          ▶ ${v.title}
+        </a>
+      </li>
+    `;
+  });
+}
+
+loadVideos();
+</script>
+
+</body>
+</html>
