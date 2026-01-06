@@ -1,1 +1,101 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تارباوي - منصة التعلم الإلكتروني</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      text-align: center;
+      max-width: 800px;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+    .buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      padding: 12px 24px;
+      background: rgba(255,255,255,0.2);
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      border: 2px solid rgba(255,255,255,0.3);
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+    .btn:hover {
+      background: rgba(255,255,255,0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .features {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .feature {
+      background: rgba(255,255,255,0.1);
+      padding: 1.5rem;
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+    }
+    .feature h3 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎓 مرحباً بك في تارباوي</h1>
+    <p>منصة التعلم الإلكتروني المتكاملة للمعلمين والطلاب</p>
 
+    <div class="buttons">
+      <a href="pages/login.html" class="btn">تسجيل الدخول</a>
+      <a href="pages/register.html" class="btn">إنشاء حساب</a>
+      <a href="pages/student-dashboard.html" class="btn">لوحة الطالب</a>
+      <a href="pages/teacher-dashboard.html" class="btn">لوحة المعلم</a>
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <h3>📚 كورسات متنوعة</h3>
+        <p>تعلم من خلال كورسات مصممة خصيصاً لك</p>
+      </div>
+      <div class="feature">
+        <h3>🎥 فيديوهات عالية الجودة</h3>
+        <p>استمتع بمشاهدة الفيديوهات في أي وقت</p>
+      </div>
+      <div class="feature">
+        <h3>👨‍🏫 معلمون محترفون</h3>
+        <p>تعلم من أفضل المعلمين في مجالاتهم</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
