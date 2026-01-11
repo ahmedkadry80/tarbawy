@@ -12,10 +12,14 @@
 <script>
 const urlParams = new URLSearchParams(window.location.search);
 const courseId = urlParams.get('course');
-const userId = 5; // مؤقتًا
+const user = JSON.parse(localStorage.getItem('user'));
+
+if (!user) {
+  window.location.href = 'login.html';
+}
 
 async function loadVideos() {
-  const res = await fetch(`/api/student/course/${courseId}/videos/${userId}`);
+  const res = await fetch(`/api/courses/${courseId}/videos`);
   const videos = await res.json();
 
   const list = document.getElementById('videos');

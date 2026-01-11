@@ -11,14 +11,21 @@
   controls
   controlsList="nodownload"
   disablePictureInPicture
+  id="videoPlayer"
 >
-  <source src="/api/stream/3?user=5" type="video/mp4">
 </video>
+
+<script>
+const urlParams = new URLSearchParams(window.location.search);
+const videoId = urlParams.get('video');
+const user = JSON.parse(localStorage.getItem('user'));
+
+if (!user) {
+  window.location.href = 'login.html';
+}
+
+document.getElementById('videoPlayer').innerHTML = `<source src="/api/videos/stream/${videoId}?user=${user.id}" type="video/mp4">`;
+</script>
 
 </body>
 </html>
-<!--5️⃣ Video Watching Page (Secure Stream)-->
-<!--<video controls controlsList="nodownload" width="100%">
-  <source src="/api/stream/VIDEO_ID?user=5" type="video/mp4">
-</video>
--->

@@ -1,20 +1,24 @@
 <form class="container mt-5" id="videoForm">
   <input type="text" name="title" class="form-control mb-2" placeholder="Video title">
-  <input type="file" name="video" class="form-control mb-2">
+  <input type="file" name="video" class="form-control mb-2" accept="video/*">
   <button class="btn btn-primary">Upload</button>
 </form>
 
 <script>
+const urlParams = new URLSearchParams(window.location.search);
+const courseId = urlParams.get('course');
+
 document.getElementById('videoForm').onsubmit = async e => {
   e.preventDefault();
 
   const formData = new FormData(e.target);
 
-  await fetch('/api/videos/upload', {
+  await fetch(`/api/courses/${courseId}/videos/upload`, {
     method: 'POST',
     body: formData
   });
 
   alert('Uploaded');
+  window.location.href = 'teacher-dashboard.html';
 };
 </script>

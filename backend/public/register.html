@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -6,13 +7,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Create account on Tarbawy">
 
-  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
   <style>
     body { background:#f4f6f9; }
     .auth-box { max-width:450px; margin:auto; }
   </style>
+  <script>
+  // JS هنا
+cdn.jsdelivr.net
 
+</script>
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
 </head>
 
@@ -126,6 +132,81 @@ function toggleLang() {
   });
 }
 </script>
+<script src="assets/js/register.js"></script>
+
+</body>
+</html>
+-->
+
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>Register | Tarbawy</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Create account on Tarbawy">
+
+  <!-- Bootstrap (Local) -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+
+<body>
+
+<div class="container vh-100 d-flex align-items-center">
+  <div class="auth-box card shadow-sm p-4 w-100">
+
+    <div class="text-end mb-3">
+      <button id="langBtn" class="btn btn-sm btn-outline-secondary">
+        AR / EN
+      </button>
+    </div>
+
+    <h4 class="text-center mb-3" data-i18n="title">إنشاء حساب</h4>
+
+    <form id="registerForm">
+      <div class="mb-2">
+        <label class="form-label" data-i18n="name">الاسم</label>
+        <input type="text" name="name" class="form-control" required>
+      </div>
+
+      <div class="mb-2">
+        <label class="form-label" data-i18n="email">البريد الإلكتروني</label>
+        <input type="email" name="email" class="form-control" required>
+      </div>
+
+      <div class="mb-2">
+        <label class="form-label" data-i18n="password">كلمة المرور</label>
+        <input type="password" name="password" class="form-control" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" data-i18n="role">نوع الحساب</label>
+        <select name="role" class="form-select">
+          <option value="student" data-i18n="student">طالب</option>
+          <option value="teacher" data-i18n="teacher">معلم</option>
+        </select>
+      </div>
+
+      <button class="btn btn-primary w-100" data-i18n="create">
+        إنشاء حساب
+      </button>
+    </form>
+
+    <p class="text-center mt-3">
+      <span data-i18n="haveAccount">لديك حساب؟</span>
+      <a href="login.html" data-i18n="login">تسجيل الدخول</a>
+    </p>
+
+  </div>
+</div>
+
+<!-- External JS only -->
+<script src="assets/js/register.js"></script>
 
 </body>
 </html>
